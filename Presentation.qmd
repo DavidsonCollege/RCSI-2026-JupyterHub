@@ -1,0 +1,201 @@
+---
+title: "JupyterHub at Davidson College"
+subtitle: RCSI - 2026
+author: "Michael Blackmon"
+execute:
+  echo: true
+format:
+  revealjs:
+    code-fold: true
+    theme: dracula
+    footer: "JupyterHub"
+---
+
+## Who Am I?
+
+::: {.fragment .r-fit-text}
+Michael Blackmon
+:::
+
+::: {.fragment .r-fit-text}
+Instructional & Research Computing  
+Davidson College
+:::
+
+::: {.fragment}
+"Reformed" applied mathematician. 
+:::
+
+## Some Examples {.smaller}
+
+::: {.incremental}
+- BIO240: Intro BioStats  
+[https://bio240.jupyter.davidson.edu](https://bio240.jupyter.davidson.edu)
+
+- BIO343: Lab Methods in Genomics  
+[https://bio343.jupyter.davidson.edu](https://bio343.jupyter.davidson.edu)  
+[https://galaxy.davidson.edu](https://galaxy.davidson.edu)  
+
+- Research Groups (Genomics focused or adjacent)  
+[https://genlab.jupyter.davidson.edu](https://genlab.jupyter.davidson.edu)  
+[https://birdlab.jupyter.davidson.edu](https://birdlab.jupyter.davidson.edu)  
+[https://sticklelab.jupyter.davidson.edu](https://sticklelab.jupyter.davidson.edu)  
+::: 
+
+::: {.fragment}
+This is **not** an accident.
+::: 
+
+## Summary (FY26) {.smaller}
+
+::: {.fragment}
+JupyterHub related services between Aug. 2025 and May 2026:
+:::
+
+::: {.fragment .incremental} 
+- Unique Users: `825` (~40% of students; observed)
+- Courses: `30` (sections; requested)
+- Research Groups: `15` (new & existing)
+- Departments: `10`
+- Jobs: `56324`
+:::
+
+## Course Sections (FY26) {.smaller}
+- *BIO240* (A,B,C,D,E,F), *BIO343* (A)  
+- *CHE260* (A,B), *CHE360* (A,B)  
+- *CSC371* (A), *CSC358* (A)  
+- *DAT110* (A,B,C), *DAT153* (A)  
+- *ECO240* (A,B), *ECO316* (A), *ECO341* (A)  
+- *MAT110* (A,B), *MAT210* (A), *MAT315* (A)  
+- *PHY240* (A), *PHY305* (A,B)  
+- *PSY200* (A,B), *PSY360* (A,B), *PSY316* (A)  
+- *SOC201* (A), *EDU291* (A)
+
+## Research Groups (FY26) {.smaller} 
+- Biology (*BIO*): 3  
+- Chemistry (*CHE*): 2  
+- Computer Science (*CSC*): 3 (maybe 4?)  
+- Data Science (*DAT*): 1 (maybe 2?)  
+- Economics (*ECO*): 2 (maybe 4?)  
+- Mathematics (*MAT*): 3  
+- Physics (*PHY*): 1  
+- Psycology (*PSY*): 1  
+
+## History
+
+How did we get here?
+
+## 2020: Infancy
+
+#### *Milestones*
+::: {.incremental}
+- 2 course specific instances.
+- Limited access generic instance.
+:::
+
+::: {.footer}
+History
+:::
+
+## 2020: Infancy
+
+#### *Stack*
+::: {.fragment}
+- Single VM per instance.
+- PAM authentication.
+- `conda` for runtime environment managment.
+:::
+
+::: {.fragment}
+and hope?
+:::
+
+::: {.footer}
+History
+:::
+
+## 2021 - 2022: Early childhood
+
+#### *Milestones*
+::: {.incremental}
+- Generic instance opened to all faculty, students, and staff.
+- Course specific instance availability expanded.
+- Research group specific instances introduced.
+- Shared `SLURM` cluster for compute. 
+:::
+
+::: {.footer}
+History
+:::
+
+## 2021 - 2022: Early childhood
+
+#### *Stack*
+::: {.fragment}
+- Python package centralizing custom tooling and config.
+- Module based runtime environment management (`Lmod`).
+- Hybrid (VM & Baremetal) `SLURM` cluster for compute. 
+- OAuth authentication and Traefik proxy.
+:::
+
+::: {.footer}
+History
+:::
+
+## 2023 - Now: Adolescence
+
+#### *Milestones* 
+::: {.incremental}
+- Faculty onboarding and collaboration.
+- Log & metric collection, monitoring and alerting.
+- Configuration & coordination via distributated key-value store:
+  - Single centralized proxy.
+  - Per-user resource allocation assignment.
+  - Per-instance/user secrets (ex. shared or other managed credentials)
+:::
+
+## 2023 - Now: Adolescence
+
+#### *Stack*
+::: {.fragment}
+- Python package centralizing custom tooling and config.
+- Module based runtime environment management (`Lmod`).
+- Hybrid (VM & Baremetal) `SLURM` cluster for compute. 
+- OAuth authentication and *one* Traefik proxy.
+:::
+
+::: {.fragment}
+- Distributed key-value store (`etcd`).
+- Prometheus, Grafana, Alertmanager...
+:::
+
+::: {.footer}
+History
+:::
+
+## Why do all of this?
+
+::: {.incremental}
+- [Launch JupyterLab](https://jupyter.davidson.edu):  
+`https://jupyter.davidson.edu`
+
+- [Launch RStudio](https://jupyter.davidson.edu/user-redirect/rstudio):  
+`https://jupyter.davidson.edu/user-redirect/rstudio`
+
+- [Get and open Notebook](https://jupyter.davidson.edu/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FpossiblyMikeB%2Ftutorials&urlpath=lab%2Ftree%2Ftutorials%2FSLURM_Batch-Scripts.noslides.ipynb&branch=main):  
+`https://jupyter.davidson.edu/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FpossiblyMikeB%2Ftutorials&urlpath=lab%2Ftree%2Ftutorials%2FSLURM_Batch-Scripts.noslides.ipynb&branch=main`
+:::
+
+## Why do all of this?
+
+::: {.incremental}
+- [Idle Job Culling](https://github.com/jupyterhub/jupyterhub-idle-culler):  
+`https://github.com/jupyterhub/jupyterhub-idle-culler`
+
+- [Remote Support and Oversight](https://bio343.jupyter.davidson.edu/hub/admin):  
+`https://bio343.jupyter.davidson.edu/hub/admin`
+:::
+
+::: {.fragment}
+- *Enginnering prior low-stakes exposure to our research computing environment en masse.*
+:::
