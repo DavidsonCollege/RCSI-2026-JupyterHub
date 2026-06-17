@@ -61,6 +61,8 @@ JupyterHub related services between Aug. 2025 and May 2026:
 :::
 
 ## Course Sections (FY26) {.smaller}
+
+::: {.incremental}
 - *BIO240* (A,B,C,D,E,F), *BIO343* (A)  
 - *CHE260* (A,B), *CHE360* (A,B)  
 - *CSC371* (A), *CSC358* (A)  
@@ -68,8 +70,9 @@ JupyterHub related services between Aug. 2025 and May 2026:
 - *ECO240* (A,B), *ECO316* (A), *ECO341* (A)  
 - *MAT110* (A,B), *MAT210* (A), *MAT315* (A)  
 - *PHY240* (A), *PHY305* (A,B)  
-- *PSY200* (A,B), *PSY360* (A,B), *PSY316* (A)  
+- *PSY200* (A,B), *PSY300* (A,B), *PSY316* (A)  
 - *SOC201* (A), *EDU291* (A)
+::: 
 
 ## Research Groups (FY26) {.smaller} 
 - Biology (*BIO*): 3  
@@ -100,7 +103,7 @@ History
 ## 2020: Infancy
 
 #### *Stack*
-::: {.fragment}
+::: {incremental}
 - Single VM per instance.
 - PAM authentication.
 - `conda` for runtime environment managment.
@@ -131,7 +134,7 @@ History
 ## 2021 - 2022: Early childhood
 
 #### *Stack*
-::: {.fragment}
+::: {.incremental}
 - Python package centralizing custom tooling and config.
 - Module based runtime environment management (`Lmod`).
 - Hybrid (VM & Baremetal) `SLURM` cluster for compute. 
@@ -164,7 +167,7 @@ History
 - OAuth authentication and *one* Traefik proxy.
 :::
 
-::: {.fragment}
+::: {.incremental}
 - Distributed key-value store (`etcd`).
 - Prometheus, Grafana, Alertmanager...
 :::
