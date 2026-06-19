@@ -66,7 +66,7 @@ JupyterHub related services between Aug. 2025 and May 2026:
 - *BIO240* (A,B,C,D,E,F), *BIO343* (A)  
 - *CHE260* (A,B), *CHE360* (A,B)  
 - *CSC371* (A), *CSC358* (A)  
-- *DAT110* (A,B,C), *DAT153* (A)  
+- *DAT110* (A,B), *DAT153* (A)  
 - *ECO240* (A,B), *ECO316* (A), *ECO341* (A)  
 - *MAT110* (A,B), *MAT210* (A), *MAT315* (A)  
 - *PHY240* (A), *PHY305* (A,B)  
